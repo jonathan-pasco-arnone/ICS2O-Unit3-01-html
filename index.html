@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="My 6th webpage">
+    <meta name="keywordss" content="Hello, World! website">
+    <meta name="author" content="Jonathan Pasco-Arnone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+  </head>
+  <body>
+    <img src="./images/Trapezoid.PNG"><br>
+    <form>
+      <label for="a-base">a base:</label>
+      <input type="text" id="a-baseid">
+      <label for="b-base">b base:</label>
+      <input type="text" id="b-baseid">
+      <label for="h-height">h height:</label>
+      <input type="text" id="h-heightid">
+    </form>
+    <button id="solve">Solve</button>
+    <h2 id="mathid"></h2>
+    <h2 id="areaid"></h2>
+    <script>
+      let aBase;
+      let bBase;
+      let hHeight;
+      let area;
+      let mathWritten;
+      let math;
+      function getArea() {
+        aBase = document.getElementById("a-baseid").value;
+        bBase = document.getElementById("b-baseid").value;
+        hHeight = document.getElementById("h-heightid").value;
+        math = (+aBase + +bBase)/2*hHeight; //what the math actualy is
+        area = ("The area of this trapezoid is " + math);
+        mathWritten = ("(" + aBase + " + " + bBase + ")" + " ÷ 2 x " + hHeight); //what the viewer will see the math is
+        document.getElementById("mathid").innerHTML = mathWritten;
+        document.getElementById("areaid").innerHTML = area;
+      }
+      document.getElementById("solve").addEventListener("click",getArea);
+    </script>
+  </body>
+</html>
